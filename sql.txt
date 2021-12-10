@@ -1,0 +1,60 @@
+CREATE TABLE USERS(
+    user_id     VARCHAR(20) PRIMARY KEY,
+    user_pw     VARCHAR(20),
+    user_name   VARCHAR(20),
+    user_gender VARCHAR(4),
+    user_email  VARCHAR(200),
+    user_tel INT
+);
+commit;
+
+CREATE TABLE AUTHMAIL(
+    user_mail VARCHAR(200) PRIMARY KEY,
+    auth_num INT
+);
+DROP TABLE Review;
+CREATE TABLE Review(
+    rev_id    INT PRIMARY KEY AUTO_INCREMENT,
+    rev_title VARCHAR(20),
+    rev_contents    TEXT,
+    rev_date    DATE,
+    accom_id INT,
+    room_id  INT,
+    user_id INT
+);
+CREATE TABLE ROOM(
+room_id INT PRIMARY KEY,
+room_num INT,
+room_name VARCHAR(20),
+room_img TEXT,
+room_text TEXT
+);
+CREATE TABLE ACCOMDATION(
+accom_id INT PRIMARY KEY,
+accom_name VARCHAR(50),
+accom_add TEXT,
+accom_img TEXT,
+accom_text VARCHAR(20)
+);
+CREATE TABLE RESERVATION(
+resev_id INT PRIMARY KEY,
+resev_status VARCHAR(30),
+resev_st DATE,
+resev_end DATE,
+user_id VARCHAR(20),
+accom_id INT,
+room_id INT
+);
+CREATE TABLE QNA(
+qna_id 	INT PRIMARY KEY AUTO_INCREMENT,
+qna_tit	VARCHAR(20),
+qna_con TEXT,
+qna_date DATE
+);
+CREATE TABLE REPLY(
+re_id	INT PRIMARY KEY AUTO_INCREMENT,
+re_con	TEXT,
+re_date	DATE,
+qna_id	INT
+);
+commit;

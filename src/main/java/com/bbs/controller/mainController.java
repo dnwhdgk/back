@@ -110,4 +110,25 @@ public class mainController {
 			return "redirect:/";
 			
 		}
+		
+		// url 패턴이 'path/about' 일 경우
+				@RequestMapping(value = "/about", method = RequestMethod.GET)
+				public String about(Model model) throws Exception {
+					
+					return "menu/about";
+				}
+				
+		// url 패턴이 'path/techstory' 일 경우
+		@RequestMapping(value = "/techstory", method = RequestMethod.GET)
+		public String techstory(Model model) throws Exception {
+			
+			return "menu/techstory";
+		}
+		
+		// url 패턴이 'path/reservation' 일 경우
+		@RequestMapping(value = "/reservation", method = RequestMethod.GET)
+		public String reservation(Model model) throws Exception {
+			
+			return "menu/reservation";
+		}
 }

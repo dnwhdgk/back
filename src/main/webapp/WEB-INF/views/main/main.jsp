@@ -18,20 +18,20 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
   </head>
   <body>
-    <!-- 네비게이션 -->
-    <nav id="nav">
+        <!-- 네비게이션 -->
+    <nav>
       <div class="sub_mn">
-      <!-- 네비게이션 로고 -->
-      <div><img src="${path}/resources/images/logo.svg" alt="" /></div>
+        <!-- 네비게이션 로고 -->
+        <div><a href="${path}/"><img src="${path}/resources/images/logo.svg" alt="" /></a></div>
         <li>
-          <a href="About.html">About</a>
+          <a href="${path}/about">About</a>
           <ul class="sub_nav">
             <li><a href="#">sub1</a></li>
             <li><a href="#">sub2</a></li>
           </ul>
         </li>
         <li>
-          <a href="techstory.html">techstory</a>
+          <a href="${path}/techstory">techstory</a>
           <ul class="sub_nav">
             <li><a href="#">sub1</a></li>
             <li><a href="#">sub2</a></li>
@@ -39,13 +39,12 @@
         </li>
 
         <li>
-          <a href="content.html">community</a>
+          <a href="${path}/reservation">reservation</a>
           <ul class="sub_nav">
             <li><a href="#">sub1</a></li>
             <li><a href="#">sub2</a></li>
           </ul>
         </li>
-        
         <!-- 로그인 회원가입 -->
         <c:if test="${empty user_id }">
         <ul class="member">
@@ -63,8 +62,9 @@
         </ul>
         </c:if>
       </div>
- 
-      </nav>
+    </nav>
+      
+   
     <div id="wrap">
       <div class="nav"></div>
       <header id="header">

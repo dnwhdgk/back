@@ -45,13 +45,25 @@
             <li><a href="#">sub2</a></li>
           </ul>
         </li>
+        
         <!-- 로그인 회원가입 -->
+        <c:if test="${empty user_id }">
         <ul class="member">
           <li><a href="${path}/login">로그인</a></li>
           <li>&#124;</li>
           <li><a href="${path}/join">회원가입</a></li>
         </ul>
+        </c:if>
+        
+        <c:if test="${not empty user_id }">
+          <ul class="member">
+          <li><a href="#">${user_id }</a></li>
+          <li>&#124;</li>
+          <li><a href="${path }/logout">로그아웃</a></li>
+        </ul>
+        </c:if>
       </div>
+ 
       </nav>
     <div id="wrap">
       <div class="nav"></div>

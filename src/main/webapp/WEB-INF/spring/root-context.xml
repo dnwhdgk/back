@@ -15,7 +15,7 @@
 	class="org.springframework.jdbc.datasource.DriverManagerDataSource"
 	id="dataSource">
 	<property name="driverClassName" value="com.mysql.cj.jdbc.Driver"></property>
-	<property name="url" value="jdbc:mysql://127.0.0.1:3307/BBS?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=Asia/Seoul"></property>
+	<property name="url" value="jdbc:mysql://127.0.0.1:3307/yanolja?useSSL=false&amp;allowPublicKeyRetrieval=true&amp;serverTimezone=Asia/Seoul"></property>
 	<property name="username" value="root"></property>
 	<property name="password" value="1234"></property>
 	</bean>
@@ -34,4 +34,6 @@
 	<bean class="org.mybatis.spring.SqlSessionTemplate" id="sqlSession" destroy-method="clearCache">
 		<constructor-arg name="sqlSessionFactory" ref="sqlSessionFactory" />
 	</bean>	
+	
+	<context:component-scan base-package="com.bbs.*" />
 </beans>

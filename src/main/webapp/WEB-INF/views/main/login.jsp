@@ -11,21 +11,23 @@
 	<link rel="stylesheet" href="${path}/resources/css/reset.css">
 	<link rel="stylesheet" href="${path}/resources/css/login.css">
 
+
+
 </head>
 <body>
 
 <div id="wrap">
 	
-		<form action="" id="login">
+		<form action="./loginAction" id="login" method="POST">
 			<h1>
 				<a href="${path}/main"><img src="${path}/resources/images/logo.svg" alt=""></a>
 			</h1>
-			<input type="text" name="id" id="id" placeholder="아이디를 입력하세요" required>
-			<input type="password" name="pw" id="pw" placeholder="비밀번호를 입력하세요" required>
+			<input type="text" name="user_id" id="id" placeholder="아이디를 입력하세요" required>
+			<input type="password" name="user_pw" id="pw" placeholder="비밀번호를 입력하세요" required>
 			<button type="submit">로그인</button>
 			<ul>
 				<li><a href="#">회원정보찾기</a></li>
-				<li><a href="#">회원가입</a></li>
+				<li><a href="./join">회원가입</a></li>
 
 			</ul>
 		</form>
@@ -34,5 +36,11 @@
 
 </div>
 
+<script>
+$(document).ready(function(){
+	var msg = '${msg}';
+	if(msg != null && msg != '') alert(msg);
+});
+</script>
 </body>
 </html>

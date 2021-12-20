@@ -37,7 +37,7 @@ a {
   float: left;
   width: 65%;
 }
-#id_btn {
+#id_check {
   float: right;
   width: 20%;
   height: 50px;
@@ -50,11 +50,13 @@ a {
   /* display: none; */
   margin-left: 40px;
 }
-#pass_ch h6:first-child {
+#diff_pw{
   color: red;
+  display :none;
 }
-#pass_ch h6:last-child {
+#equal_pw{
   color: lawngreen;
+    display :none;
 }
 /* 성별 */
 .gender {

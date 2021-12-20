@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-
-
+	<typeAliases>
+  		<typeAlias alias="Users"      type="com.bbs.vo.Users"/>
+  		<typeAlias alias="Authmail"   type="com.bbs.vo.Authmail"/>
+  		<typeAlias alias="Reply"      type="com.bbs.vo.Reply"/>
+  		<typeAlias alias="Accommodation"      type="com.bbs.vo.Accommodation"/>
+		<typeAlias alias="Qna"      type="com.bbs.vo.Qna"/>
+		<typeAlias alias="Reservation"      type="com.bbs.vo.Reservation"/>
+		<typeAlias alias="Review"      type="com.bbs.vo.Review"/>
+		<typeAlias alias="Room"      type="com.bbs.vo.Room"/>
+	</typeAliases>
 </configuration>

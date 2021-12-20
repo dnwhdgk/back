@@ -1,15 +1,15 @@
 package com.bbs.vo;
 
-public class Accomdation {
+public class Accommodation {
 	private int accom_id;
 	private String accom_name;
 	private String accom_add;
 	private String accom_img;
 	private String accom_text;
 	
-	public Accomdation() {}
+	public Accommodation() {}
 
-	public Accomdation(int accom_id, String accom_name, String accom_add, String accom_img, String accom_text) {
+	public Accommodation(int accom_id, String accom_name, String accom_add, String accom_img, String accom_text) {
 		super();
 		this.accom_id = accom_id;
 		this.accom_name = accom_name;

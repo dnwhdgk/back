@@ -131,7 +131,7 @@ nav .member li a {
 .hotel_img {
   width: 634px;
   height: 1000px;
-  background: url(../images/hotel.jpg) no-repeat;
+  background: url(http://localhost:8081/resources/images/change-gf49327f35_1920.jpg) no-repeat;
   background-size: 634px 1000px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -141,7 +141,7 @@ nav .member li a {
   justify-content: center;
   align-items: center;
   font-size: 0;
-  filter: url(../images/motel.jpg) brightness(60%);
+  filter: brightness(60%);
 }
 .hotel_img:hover {
   -webkit-transform: scale(1.1);
@@ -174,7 +174,7 @@ nav .member li a {
 .motel_img {
   width: 634px;
   height: 1000px;
-  background: url(../images/motel.jpg) no-repeat;
+  background: url(http://localhost:8081/resources/images/checklist-ga35a8860b_1920.jpg) no-repeat;
   background-size: 634px 1000px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -184,7 +184,7 @@ nav .member li a {
   justify-content: center;
   align-items: center;
   font-size: 0;
-  filter: url(../images/motel.jpg) brightness(60%);
+  filter: brightness(60%);
 }
 .motel_img:hover {
   -webkit-transform: scale(1.1);
@@ -217,7 +217,7 @@ nav .member li a {
 .resort_img {
   width: 634px;
   height: 1000px;
-  background: url(../images/resort.png) no-repeat;
+  background: url(http://localhost:8081/resources/images/idea-gb92d089d8_1920.jpg) no-repeat;
   background-size: 634px 1000px;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
@@ -227,7 +227,7 @@ nav .member li a {
   justify-content: center;
   align-items: center;
   font-size: 0;
-  filter: url(../images/motel.jpg) brightness(60%);
+  filter: brightness(60%);
 }
 .resort_img:hover {
   -webkit-transform: scale(1.1);

@@ -16,10 +16,10 @@ a {
 
 #join {
   width: 500px;
-  height: 900px;
+  height: 680px;
 
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 70px;
   border: 1px solid #333;
   border-radius: 10%;
 }
@@ -130,5 +130,5 @@ a {
 }
 #join img {
   width: 200px;
-  height: 150px;
+  height: 100px;
 }

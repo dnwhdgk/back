@@ -8,15 +8,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hotel,Motel,Resort</title>
-    <link rel="stylesheet" href="${path}/resources/css/reset.css" />
-    <link rel="stylesheet" href="${path}/resources/css/hotel.css" />
-    <script src="${path}/resources/js/jquery-1.7.2.min.js"></script>
+    <link rel="stylesheet" href="${path}/resources/css/main/reset.css" />
+    <link rel="stylesheet" href="${path}/resources/css/menu/reservation.css" />
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="${path}/resources/js/js.js"></script>
-    <script src="${path}/resources/js/jquery.easeScroll.js"></script>
+    <script src="${path}/resources/js/jquery/jquery.easeScroll.js"></script>
 
   </head>
   <body>
-      <!-- 네비게이션 -->
+        <!-- 네비게이션 -->
     <nav>
       <div class="sub_mn">
         <!-- 네비게이션 로고 -->
@@ -54,34 +54,44 @@
         
         <c:if test="${not empty user_id }">
           <ul class="member">
-          <li><a href="#">${user_id }</a></li>
+          <li><a href="${path}/mypage">${user_id }</a></li>
           <li>&#124;</li>
           <li><a href="${path }/logout">로그아웃</a></li>
         </ul>
         </c:if>
       </div>
     </nav>
+      
+   
     <div id="wrap">
       <div class="nav"></div>
-      <header id="header"></header>
+      <header id="header">
 
-      <di v id="contents">
+        </header>
+
+      <div id="contents">
         <section class="hotel">
-          <div class="hotel_img">
-            <p>호텔<br>바로가기</p>
-          </div>
+         <a href="${path}/hotel">
+            <div class="hotel_img">
+              <p>호텔<br>바로가기</p>
+            </div>
+          </a>
         </section>
 
         <section class="motel">
-          <div class="motel_img">
-            <p>모텔<br>바로가기</p>
-          </div>>
+            <a href="${path}/motel">
+            <div class="motel_img">
+              <p>모텔<br>바로가기</p>
+            </div>
+          </a>
         </section>
 
         <section class="resort">
-          <div class="resort_img">
-            <p>리조트<br>바로가기</p>
-          </div>
+            <a href="${path}/resort">
+            <div class="resort_img">
+              <p>리조트<br>바로가기</p>
+            </div>
+          </a>
         </section>
 
       </div>

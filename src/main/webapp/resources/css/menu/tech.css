@@ -38,15 +38,6 @@ nav a.on1 {
   display: block;
   color: #000;
 }
-nav .member li.on2 {
-  display: block;
-  color: #000;
-}
-nav .member a.on2 {
-  display: block;
-  color: #000;
-}
-
 .downdown {
   position: fixed;
   animation: down 0.3s ease;
@@ -59,6 +50,7 @@ nav .member a.on2 {
     transform: translateY(0px);
   }
 }
+
 nav .sub_mn {
   width: 100%;
   height: 200px;
@@ -109,13 +101,20 @@ nav .member li {
 nav .member li a {
   font-size: 15px;
   font-weight: bold;
-  color: #fff;
+  /* color: #fff; */
 }
 
 #wrap {
   display: flex;
   flex-flow: row wrap;
   min-width: 280px;
+}
+/* 헤더 */
+#header {
+  flex: 1 1 100%;
+}
+.nav {
+  width: 100%;
 }
 
 /* 컨텐츠 */
@@ -126,6 +125,15 @@ nav .member li a {
 #contents .main_img {
   width: 100%;
   height: 640px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main_img img {
+  width: 0;
+  height: 0;
+  border: 1px solid #000;
+  overflow: hidden;
 }
 #contents .tech_img img {
   float: left;
@@ -250,7 +258,7 @@ nav .member li a {
 }
 
 #kiosk {
-  margin-top: 200px;
+  margin-top: 250px;
 }
 .ki_group {
   float: right;
@@ -262,10 +270,15 @@ nav .member li a {
   margin-left: 270px;
   width: 550px;
   height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .ki_img img {
-  width: 550px;
-  height: 750px;
+  width: 0px;
+  height: 0px;
+  border: 1px solid #000;
+  overflow: hidden;
 }
 
 .ki_txt {
@@ -301,25 +314,45 @@ nav .member li a {
 .lot_left {
   float: left;
   margin-left: 100px;
-}
-.lot_left img {
   width: 600px;
   height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lot_left img {
+  width: 0px;
+  height: 0px;
+  border: 1px solid #000;
+  overflow: hidden;
 }
 
 .lot_right {
+  position: relative;
   float: left;
+  width: 1100px;
+  height: 700px;
   margin-left: 10px;
   margin-top: 250px;
 }
-.lot_right img {
+.right_img {
+  float: left;
   width: 600px;
   height: 700px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lot_right img {
+  width: 0px;
+  height: 0px;
+  border: 1px solid #000;
+  overflow: hidden;
 }
 .lot_txt {
   float: right;
-  margin-top: 270px;
-  margin-left: 30px;
+  margin-top: 230px;
+  margin-right: 80px;
 }
 .lot_txt h2 {
   font-size: 37px;
@@ -344,10 +377,17 @@ nav .member li a {
 }
 .sys_img {
   float: left;
+  width: 600px;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .sys_img img {
-  height: 750px;
-  width: 600px;
+  width: 0px;
+  height: 0px;
+  border: 1px solid #000;
+  overflow: hidden;
 }
 
 .sys_txt {
@@ -377,10 +417,17 @@ nav .member li a {
 }
 .live_img {
   float: right;
+  width: 600px;
+  height: 750px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .live_img img {
-  height: 750px;
-  width: 600px;
+  width: 0;
+  height: 0;
+  border: 1px solid #000;
+  overflow: hidden;
 }
 
 .live_txt {
@@ -408,7 +455,6 @@ nav .member li a {
   border-top: 1px solid #000;
   margin: 0 auto;
   font-weight: 600;
-  margin-top: 100px;
 }
 /* 하단 왼쪽 */
 #foot_L {
@@ -432,21 +478,66 @@ nav .member li a {
   border-bottom: 1px solid #000;
   cursor: pointer;
 }
-#family > span {
-  line-height: 60px;
-  font-size: 0.8rem;
-  margin-left: 2%;
-}
 #f_s {
+  width: 100%;
+  height: 100%;
   border-bottom: 1px solid #000;
 }
+#f_s > li {
+  width: 100%;
+  height: 100%;
+}
+#f_s > li > a {
+  padding-left: 1%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 60px;
+  font-size: 0.8rem;
+  color: #000;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+#f_s > li > a:after {
+  content: "";
+  width: 0%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  left: 0;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  background: pink;
+}
+#f_s > li > a:hover {
+  color: #fff;
+}
+#f_s > li > a:hover:after {
+  width: 100%;
+  z-index: -1;
+}
 .family_sub {
-  display: none;
-  margin: 20px 0 30px 20px;
+  position: absolute;
+  z-index: 9999;
+  margin: 20px 0 30px 5px;
   font-size: 0.7rem;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #000;
 }
 .family_sub li {
   margin-bottom: 10px;
+}
+.family_sub li:last-child {
+  margin-bottom: 20px;
 }
 .family_sub a {
   display: block;

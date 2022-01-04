@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+ul,
+ol,
+li {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+#wrap {
+  width: 100%;
+}
+
+#join {
+  width: 500px;
+  height: 500px;
+  margin: 0 auto;
+  margin-top: 150px;
+  border: 1px solid #333;
+  border-radius: 10%;
+}
+#join input {
+  width: 80%;
+  height: 50px;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-left: 50px;
+  border: 0;
+  border-bottom: 1px solid #333;
+}
+/* 아이디 입력창 */
+#id_box {
+  float: left;
+  width: 80%;
+  height: 50px;
+  margin-left: 50px;
+
+}
+
+/* 비밀번호 체크 */
+#pass_ch {
+  float: left;
+  /* display: none; */
+  margin-left: 50px;
+}
+#diff_pw {
+  color: red;
+  display: none;
+}
+#equal_pw {
+  color: lawngreen;
+  display: none;
+}
+
+/* 가입버튼 */
+#join_btn {
+  width: 80%;
+  height: 50px;
+  background-color: pink;
+  margin-top: 20px;
+  margin-left: 50px;
+}
+
+#join h1 {
+  /* margin: 0 auto; */
+  text-align: center;
+  font-size: 40px;
+  margin: 30px 0 50px 0;
+  color: pink;
+  text-shadow: 1px 1px 1px #ccc;
+}
+#join img {
+  width: 200px;
+  height: 100px;
+}

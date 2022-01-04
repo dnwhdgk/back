@@ -39,11 +39,6 @@ $(function () {
     $(".member li a").css({ color: "#fff;" });
   });
 
-  // $(document).mouseleave(function () {
-  //   $(".sub_mn").stop().animate({ height: "0px" }, 200);
-  //   $(".sub_nav").stop().animate({ height: "0px" }, 200);
-  // });
-
   var lastScroll = 0;
   $(window).scroll(function (event) {
     var scroll = $(this).scrollTop();

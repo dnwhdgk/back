@@ -1,7 +1,7 @@
 package com.bbs.vo;
 
 public class Accommodation {
-	private int accom_id;
+
 	private String accom_name;
 	private String accom_add;
 	private String accom_img;
@@ -9,22 +9,15 @@ public class Accommodation {
 	
 	public Accommodation() {}
 
-	public Accommodation(int accom_id, String accom_name, String accom_add, String accom_img, String accom_text) {
+	public Accommodation(String accom_name, String accom_add, String accom_img, String accom_text) {
 		super();
-		this.accom_id = accom_id;
+
 		this.accom_name = accom_name;
 		this.accom_add = accom_add;
 		this.accom_img = accom_img;
 		this.accom_text = accom_text;
 	}
 
-	public int getAccom_id() {
-		return accom_id;
-	}
-
-	public void setAccom_id(int accom_id) {
-		this.accom_id = accom_id;
-	}
 
 	public String getAccom_name() {
 		return accom_name;
@@ -57,6 +50,16 @@ public class Accommodation {
 	public void setAccom_text(String accom_text) {
 		this.accom_text = accom_text;
 	}
+
+	@Override
+	public String toString() {
+		return "Accommodation [accom_name=" + accom_name + ", accom_add=" + accom_add
+				+ ", accom_img=" + accom_img + ", accom_text=" + accom_text + "]";
+	}
+
+	
+
+	
 	
 	
 }

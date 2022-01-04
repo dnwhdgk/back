@@ -5,17 +5,19 @@ public class Room {
 	private int room_num;
 	private String room_name;
 	private String room_img;
-	private String room_text;
+	private int room_price;
+	private String accom_name;
 	
 	public Room() {}
 
-	public Room(int room_id, int room_num, String room_name, String room_img, String room_text) {
+	public Room(int room_id, int room_num, String room_name, String room_img, int room_price, String accom_name) {
 		super();
 		this.room_id = room_id;
 		this.room_num = room_num;
 		this.room_name = room_name;
 		this.room_img = room_img;
-		this.room_text = room_text;
+		this.room_price = room_price;
+		this.accom_name = accom_name;
 	}
 
 	public int getRoom_id() {
@@ -50,13 +52,29 @@ public class Room {
 		this.room_img = room_img;
 	}
 
-	public String getRoom_text() {
-		return room_text;
+	public int getRoom_price() {
+		return room_price;
 	}
 
-	public void setRoom_text(String room_text) {
-		this.room_text = room_text;
+	public void setRoom_price(int room_price) {
+		this.room_price = room_price;
 	}
+
+	public String getAccom_name() {
+		return accom_name;
+	}
+
+	public void setAccom_name(String accom_name) {
+		this.accom_name = accom_name;
+	}
+
+	@Override
+	public String toString() {
+		return "Room [room_id=" + room_id + ", room_num=" + room_num + ", room_name=" + room_name + ", room_img="
+				+ room_img + ", room_price=" + room_price + ", accom_name=" + accom_name + "]";
+	}
+
 	
+
 	
 }

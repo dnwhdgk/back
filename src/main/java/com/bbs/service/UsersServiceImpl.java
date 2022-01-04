@@ -1,5 +1,7 @@
 package com.bbs.service;
 
+import java.util.HashMap;
+import java.util.List;
 import java.util.Properties;
 import java.util.Random;
 
@@ -13,10 +15,17 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.bbs.dao.UsersDAO;
+import com.bbs.util.Img_u;
 import com.bbs.util.Mail;
+import com.bbs.vo.Accommodation;
 import com.bbs.vo.Authmail;
+import com.bbs.vo.Qna;
+import com.bbs.vo.Reply;
+import com.bbs.vo.Reservation;
+import com.bbs.vo.Room;
 import com.bbs.vo.Users;
 
 @Service
@@ -24,6 +33,9 @@ public class UsersServiceImpl implements UsersService {
 
 	@Inject
 	UsersDAO dao;
+	
+	
+	static final String PATH = "F:\\eclipse\\workspace\\Yanolja\\src\\main\\webapp\\resources\\upload\\";
 	
 	@Override
 	public void joinAction(Users users) throws Exception {
@@ -118,10 +130,165 @@ public class UsersServiceImpl implements UsersService {
 	@Override
 	public int loginAction(Users users) throws Exception {
 		
-		
-		if(dao.login(users) == null) return 1;
+		if(dao.login(users) == null) return 1; 
 		
 		return 0;
 	}
+
+	@Override
+	public void modifyAction(Users users) throws Exception {
+		dao.modifyUsers(users);
+		
+	}
+
+	@Override
+	public void accomAction(Accommodation accom, MultipartFile file) throws Exception {
+		
+		accom = Img_u.upload(accom,file, PATH);
+		dao.manager(accom);
+
+		
+	}
+	
+
+	@Override
+	public void roomAction(Room room, MultipartFile file) throws Exception {
+		room = Img_u.upload1(room,file, PATH);
+		dao.room(room);
+		
+	}
+
+	@Override
+	public List<Accommodation> getHotelList() throws Exception {
+		
+		return dao.getHotel();
+	}
+	
+	
+	
+	@Override
+	public List<Accommodation> getMotelList() throws Exception {
+		
+		return dao.getMotel();
+	}
+	
+	@Override
+	public List<Accommodation> getResortList() throws Exception {
+		
+		return dao.getResort();
+	}
+
+	@Override
+	public HashMap<String, Object> hotel(String accom_name) throws Exception {
+		Accommodation accom = dao.Hotel(accom_name);
+		List<Room> roomList = dao.roomList(accom_name);
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("accom", accom);
+		map.put("roomList", roomList);
+		
+		return map;
+	}
+
+	@Override
+	public void qnaAction(Qna qna) throws Exception {
+		dao.Qna(qna);
+	}
+
+	@Override
+	public HashMap<String, Object> getQnaList(String user_id) throws Exception {
+		
+		List<Qna> qnaList = dao.qnaList(user_id);
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("qnaList", qnaList);
+		
+		return map;
+	}
+
+	@Override
+	public HashMap<String, Object> qna_v(Qna qna) throws Exception {
+		Qna qna1 = dao.qna_v(qna);
+		List<Reply> replyList = dao.getReplyList(qna1.getQna_id());
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("qna1", qna1);
+		map.put("replyList", replyList);
+		
+		return map;
+	}
+
+	@Override
+	public void deleteQna(int qna_id) throws Exception {
+		dao.deletereply(qna_id);
+		dao.deleteqna(qna_id);
+	}
+
+	@Override
+	public void updateQna(Qna qna) throws Exception {
+		dao.updateqna(qna);
+		
+	}
+
+	@Override
+	public int resAction(Reservation res) throws Exception {
+	
+		return dao.reservation(res).getResev_id();
+		
+	}
+
+	@Override
+	public HashMap<String, Object> getroom(int room_id) throws Exception {
+		Room room = dao.getroom(room_id);
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("room", room);
+		return map;
+	}
+
+	@Override
+	public HashMap<String, Object> rescheck(String user_id) throws Exception {
+
+		Reservation res = dao.rescheck(user_id);
+		Room room = null;									   //
+		if (res != null) room = dao.getroom(res.getRoom_id()); // NullPointerException 해결
+		
+		HashMap<String, Object> map = new HashMap<String, Object>();
+		map.put("res", res);
+		map.put("room", room);
+		                                                                        
+		return map;
+	}
+	
+	
+	@Override
+	public void delResAction(String user_id) throws Exception {
+		dao.delResAction(user_id);
+		
+		
+	}
+
+	@Override
+	public List<Qna> manQnaList() throws Exception {
+		
+		return dao.manQnaList();
+	}
+
+	@Override
+	public int replyAction(Reply reply) throws Exception {
+		
+		return dao.reply(reply).getRe_id();
+			
+	}
+
+
+	
+
+	
+
+
+
+
+
+
 	
 }

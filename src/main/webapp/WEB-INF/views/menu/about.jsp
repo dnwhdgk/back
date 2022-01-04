@@ -8,19 +8,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Yanolja</title>
-    <link rel="stylesheet" href="${path}/resources/css/reset.css" />
-    <link rel="stylesheet" href="${path}/resources/css/About_css.css" />
-    <script src="${path}/resources/js/jquery-1.7.2.min.js"></script>
-    <script src="${path}/resources/js/jquery.fadethis.js"></script>
+    <link rel="stylesheet" href="${path}/resources/css/main/reset.css" />
+    <link rel="stylesheet" href="${path}/resources/css/menu/about.css" />
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="${path}/resources/js/jquery/jquery.fadethis.js"></script>
     <script src="${path}/resources/js/js.js"></script>
-    <script src="${path}/resources/js/jquery.easeScroll.js"></script>
-    <script src="${path}/resources/js/jquery.nicescroll.min.js"></script>
+    <script src="${path}/resources/js/jquery/jquery.easeScroll.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-mousewheel/3.1.13/jquery.mousewheel.js"></script>
   </head>
   <body>
-    <div id="wrap">
-      <header id="header">
-            <!-- 네비게이션 -->
+        <!-- 네비게이션 -->
     <nav>
       <div class="sub_mn">
         <!-- 네비게이션 로고 -->
@@ -58,14 +55,20 @@
         
         <c:if test="${not empty user_id }">
           <ul class="member">
-          <li><a href="#">${user_id }</a></li>
+          <li><a href="${path}/mypage">${user_id }</a></li>
           <li>&#124;</li>
           <li><a href="${path }/logout">로그아웃</a></li>
         </ul>
         </c:if>
       </div>
     </nav>
-      </header>
+      
+   
+    <div id="wrap">
+      <div class="nav"></div>
+      <header id="header">
+
+        </header>
 
       <section id="contents">
         

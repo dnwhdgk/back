@@ -7,20 +7,20 @@ public class Reservation {
 	private String resev_st;
 	private String resev_end;
 	private String user_id;
-	private int accom_id;
+	private String accom_name;
 	private int room_id;
 	
 	public Reservation() {}
 
 	public Reservation(int resev_id, String resev_status, String resev_st, String resev_end, String user_id,
-			int accom_id, int room_id) {
+			String accom_name, int room_id) {
 		super();
 		this.resev_id = resev_id;
 		this.resev_status = resev_status;
 		this.resev_st = resev_st;
 		this.resev_end = resev_end;
 		this.user_id = user_id;
-		this.accom_id = accom_id;
+		this.accom_name = accom_name;
 		this.room_id = room_id;
 	}
 
@@ -64,12 +64,12 @@ public class Reservation {
 		this.user_id = user_id;
 	}
 
-	public int getAccom_id() {
-		return accom_id;
+	public String getAccom_name() {
+		return accom_name;
 	}
 
-	public void setAccom_id(int accom_id) {
-		this.accom_id = accom_id;
+	public void setAccom_name(String accom_name) {
+		this.accom_name = accom_name;
 	}
 
 	public int getRoom_id() {
@@ -79,6 +79,7 @@ public class Reservation {
 	public void setRoom_id(int room_id) {
 		this.room_id = room_id;
 	}
+
 	
 	
 }

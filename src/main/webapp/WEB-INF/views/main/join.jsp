@@ -8,13 +8,13 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="${path}/resources/css/reset.css">
-	<link rel="stylesheet" href="${path}/resources/css/join.css">
-	<link rel="stylesheet" href="${path}/resources/css/bootstrap.css">
+	<link rel="stylesheet" href="${path}/resources/css/main/reset.css">
+	<link rel="stylesheet" href="${path}/resources/css/main/join.css">
+	<link rel="stylesheet" href="${path}/resources/css/bootstrap/bootstrap.css">
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery.min.js" charset="UTF-8"></script>
 	<script src="${path}/resources/js/join.js" charset="UTF-8"></script>
-	<script src="${path}/resources/js/bootstrap.js"></script>
+	<script src="${path}/resources/js/bootstrap/bootstrap.js"></script>
 </head>
 <body>
 

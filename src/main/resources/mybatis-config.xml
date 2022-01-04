@@ -10,5 +10,6 @@
 		<typeAlias alias="Reservation"      type="com.bbs.vo.Reservation"/>
 		<typeAlias alias="Review"      type="com.bbs.vo.Review"/>
 		<typeAlias alias="Room"      type="com.bbs.vo.Room"/>
+		<typeAlias alias="Res"      type="com.bbs.vo.Res"/>
 	</typeAliases>
 </configuration>

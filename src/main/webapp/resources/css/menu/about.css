@@ -11,66 +11,113 @@ a {
   text-decoration: none;
 }
 
-#wrap {
-  width: 100%;
-}
-/* 헤더 */
-#header {
-  position: relative;
-  width: 100%;
-  height: 100px;
-  z-index: 9000;
-}
-#header img {
+/* 네비게이션 */
+nav .sub_mn img {
   float: left;
   margin: 20px 150px 0 110px;
   width: 110px;
   height: 50px;
 }
+nav {
+  width: 100%;
+  height: 90px;
+  color: #fff;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+nav:hover a {
+  display: block;
+  color: #000;
+}
+nav.on {
+  background-color: #fff;
+}
+nav a.on1 {
+  display: block;
+  color: #000;
+}
+.downdown {
+  position: fixed;
+  animation: down 0.3s ease;
+}
+@keyframes down {
+  0% {
+    transform: translateY(-50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 
-#header .nav {
+nav .sub_mn {
+  width: 100%;
+  height: 200px;
+  background-color: #fff;
+}
+nav .sub_mn > li {
   float: left;
+  margin-right: 230px;
   margin-top: 30px;
-  margin-right: 200px;
 }
-#header .nav > li {
-  float: left;
-  margin-right: 160px;
+nav li a {
+  color: #fff;
+  font-weight: bold;
+  font-size: 20px;
 }
-#header ul li a {
+nav ul li a {
   font-size: 20px;
   font-weight: bold;
   color: white;
 }
 
-#header .nav .sub_nav {
+/* 서브메뉴 */
+nav .sub_nav {
   margin-top: 20px;
-  display: none;
+  overflow: hidden;
 }
-#header .nav .sub_nav li {
+nav .sub_nav li {
   margin-bottom: 15px;
 }
-#header .nav .sub_nav li a {
+nav .sub_nav li a {
   font-size: 20px;
   font-weight: bold;
   color: gray;
 }
 
-#header .member {
+/* 로그인, 회원가입 */
+nav .member {
   float: right;
   margin-top: 30px;
   margin-right: 120px;
 }
 
-#header .member li {
+nav .member li {
   float: left;
   margin-right: 20px;
 }
 
-#header .member li a {
+nav .member li a {
   font-size: 15px;
   font-weight: bold;
-  color: white;
+  /* color: #fff; */
+}
+
+#wrap {
+  display: flex;
+  flex-flow: row wrap;
+  min-width: 280px;
+}
+/* 헤더 */
+#header {
+  flex: 1 1 100%;
+  height: 100px;
+}
+
+.nav {
+  width: 100%;
+  margin-top: 30px;
 }
 /* 컨텐츠 */
 #contents {
@@ -89,7 +136,7 @@ a {
   float: left;
   width: 100%;
   height: 1070px;
-  background-image: url("../images/kv.jpg");
+  background-image: url("http://localhost:8081/resources/images/kv.jpg");
 }
 #container .txt {
 }
@@ -144,11 +191,11 @@ a {
   position: absolute;
   top: 2070px;
   width: 100%;
-  background-color:azure;
+
 }
 #container3  h1{
   float: left;
- margin-left: 360px;
+  margin-left: 360px;
   writing-mode: vertical-rl;
   font-size: 160px;
 }
@@ -182,7 +229,7 @@ margin-left: 160px;
   position: absolute;
   top: 3500px;
   width: 100%;
-  background-color: wheat;
+  
 }
 #container4  h1{
   float: left;
@@ -218,7 +265,7 @@ margin-right: 160px;
   position: absolute;
   top: 4800px;
   width: 100%;
-  background-color: wheat;
+
 }
 #container5  h1{
   float: left;
@@ -291,14 +338,14 @@ margin-left: 160px;
   top: 700px;
   left: 700px;
   margin-bottom: 50px;
-  background-color: antiquewhite;
+  
 }
 #container6 .img li{
   float: left;
   margin: 20px 20px 20px 0;
 }
 #container6 .font{
-  background-color: aqua;
+ 
 }
 
 #container6 .font li{
@@ -322,65 +369,75 @@ margin-left: 160px;
 }
 
 #container7 h1{
+  width: 90%;
+  margin: 0 auto;
   font-size: 90px;
-  padding-left: 100px;
   padding-top: 300px;
-  background-color: blanchedalmond;
-  margin-bottom: 50px;
+  padding-bottom: 50px;
+ 
+  border-bottom: 1px solid #000;
+}
+#container7 h2{
+  font-size: 70px;
 }
 
 #container7 .table{
   width: 90%;
   height: 900px;
   margin: 0 auto;
-  background-color: aqua;
 }
-#container7 .first{
-  width: 100%;
-  background-color: blueviolet;
-}
-
 #container7 .table > li{
-  border: 1px solid #000;
-}
-#container7 .in_table > ul{
-float: left;
+  display: block;
+  width: 100%;
+  height: 200px;
+  border-bottom: 1px solid #000;
+  
 }
 
-#container7 .in_table > li{
-  float: left;
-  margin-right: 450px;
-  }
+
+#container7 .in_table{
+  width: 100%;
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+#container7 .in_table .icon{
+  display: block;
+  width: 50px;
+  
+  
+
+}
+#container7 .in_table img{
+  width: 100%;
+}
+
+
+
 #container7 .inner_table{
   float: left;
+  margin-right: 80px;
+  display: block;
+  font-size: 20px;
+  font-weight: bold;
 }
-
-
-/* #container7 .table ul{
-  float: left;
-
+#container7 .inner_table li{
+margin-bottom: 25px;
 }
-
-#container7 .table > li{
+#container7 .inner_table2{
   float: left;
-  width: 100%;
-  border-top: 1px solid #000; 
   
-  background-color:burlywood;
-
 }
-#container7 .table > li:last-child{
-  border-bottom: 1px solid #000;
+#container7 .inner_table2 li{
+  margin-bottom: 30px;
 }
-
-
-  */
 
 
 /* 하단 */
 #footer {
-  width: 94%;
-  height: 300px;
+  position: absolute;
+  top: 9500px;
+  width: 100%;
   border-top: 1px solid #000;
   margin: 0 auto;
   font-weight: 600;
@@ -407,21 +464,66 @@ float: left;
   border-bottom: 1px solid #000;
   cursor: pointer;
 }
-#family > span {
-  line-height: 60px;
-  font-size: 0.8rem;
-  margin-left: 2%;
-}
 #f_s {
+  width: 100%;
+  height: 100%;
   border-bottom: 1px solid #000;
 }
+#f_s > li {
+  width: 100%;
+  height: 100%;
+}
+#f_s > li > a {
+  padding-left: 1%;
+  display: block;
+  width: 100%;
+  height: 100%;
+  line-height: 60px;
+  font-size: 0.8rem;
+  color: #000;
+  position: relative;
+  z-index: 1;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+}
+#f_s > li > a:after {
+  content: "";
+  width: 0%;
+  height: 100%;
+  top: 0;
+  position: absolute;
+  left: 0;
+  -webkit-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  -ms-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  background: pink;
+}
+#f_s > li > a:hover {
+  color: #fff;
+}
+#f_s > li > a:hover:after {
+  width: 100%;
+  z-index: -1;
+}
 .family_sub {
-  display: none;
-  margin: 20px 0 30px 20px;
+  position: absolute;
+  z-index: 9999;
+  margin: 20px 0 30px 5px;
   font-size: 0.7rem;
+  background-color: #fff;
+  width: 100%;
+  border-bottom: 1px solid #000;
 }
 .family_sub li {
   margin-bottom: 10px;
+}
+.family_sub li:last-child {
+  margin-bottom: 20px;
 }
 .family_sub a {
   display: block;

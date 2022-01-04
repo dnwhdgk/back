@@ -53,4 +53,149 @@
 		AND    user_pw = #{user_pw}
 	</select>
 	
+	<!-- 회원정보 수정 SQL -->
+	<update id="modifyUsers">
+		UPDATE USERS
+		SET    user_pw = #{user_pw} , user_name = #{user_name}
+		WHERE  user_id = #{user_id}
+	</update>
+	
+	<!-- 숙소등록 SQL -->
+	<insert id="manager">
+		INSERT INTO accommodation
+		VALUES (#{accom_name}, #{accom_add}, #{accom_img}, #{accom_text})
+	</insert>
+	
+	<!-- 방등록 SQL -->
+	<insert id="room">
+		INSERT INTO room (accom_name, room_num, room_name, room_img, room_price)
+		VALUES (#{accom_name}, #{room_num}, #{room_name}, #{room_img}, #{room_price})
+			<selectKey keyProperty="room_id" resultType="_int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+
+	<!-- 호텔리스트 불러오기 SQL -->
+	<select id="getHotel" resultType="Accommodation">
+		SELECT *
+		FROM   accommodation
+		WHERE accom_name LIKE <![CDATA['%호텔']]>
+	</select>
+	
+	<!-- 모텔리스트 불러오기 SQL -->
+	<select id="getMotel" resultType="Accommodation">
+		SELECT *
+		FROM   accommodation
+		WHERE accom_name LIKE <![CDATA['%모텔']]>
+	</select>
+	
+	<!-- 리조트리스트 불러오기 SQL -->
+	<select id="getResort" resultType="Accommodation">
+		SELECT *
+		FROM   accommodation
+		WHERE accom_name LIKE <![CDATA['%리조트']]>
+	</select>
+	
+	<!-- 숙소 불러오기 SQL -->
+	<select id="Hotel" parameterType="String" resultType="Accommodation">
+		SELECT *
+		FROM   accommodation
+		WHERE accom_name = #{accom_name}
+	</select>
+	
+	<!-- room리스트 불러오기 SQL -->
+	<select id="roomList" parameterType="String" resultType="Room">
+		SELECT *
+		FROM   room
+		WHERE accom_name = #{accom_name}
+	</select>
+	
+	<!-- QNA 등록 SQL -->
+	<insert id="Qna">
+		INSERT INTO QNA
+		VALUES (#{qna_id}, #{qna_tit}, #{qna_con}, now(), #{user_id})
+	</insert>
+	
+	<!-- qna리스트불러오기 SQL -->
+	<select id="qnaList" parameterType="String" resultType="Qna">
+		SELECT *
+		FROM   qna
+		WHERE user_id = #{user_id}
+	</select>
+	
+	<!-- qna불러오기 불러오기 SQL -->
+	<select id="qna_v" parameterType="int" resultType="Qna">
+		SELECT *
+		FROM   qna
+		WHERE qna_id = #{qna_id}
+	</select>
+	
+	<!-- qna 삭제 처리 SQL -->
+	<delete id ="deleteqna">
+		DELETE FROM qna
+		WHERE qna_id = #{qna_id}
+	</delete>
+	
+	<!-- 댓글 삭제 처리 SQL -->
+	<delete id = "deletereply">
+		DELETE FROM reply
+		WHERE qna_id = #{qna_id}
+	</delete>
+	
+	<!-- qna 수정 SQL -->
+	<update id="updateqna">
+		UPDATE Qna
+		SET    qna_tit = #{qna_tit}, qna_con = #{qna_con} 
+		WHERE  qna_id = #{qna_id} 
+	</update>
+	
+	<!-- res 등록 SQL -->
+	<insert id="reservation">
+		INSERT INTO reservation (resev_st,resev_end,user_id,accom_name,room_id)
+		VALUES (#{resev_st}, #{resev_end}, #{user_id}, #{accom_name}, #{room_id})
+		<selectKey keyProperty="resev_id" resultType="_int" order="AFTER">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+	</insert>
+	
+	<!-- room 불러오기 SQL -->
+	<select id="getroom" parameterType="int" resultType="Room">
+		SELECT *
+		FROM   room
+		WHERE room_id = #{room_id}
+	</select>
+	
+	<!-- 예약확인 불러오기 SQL -->
+	<select id="rescheck" resultType="Reservation">
+		select *
+		from reservation
+		where user_id = #{user_id};
+	</select>
+
+	<!-- 예약확인 삭제 SQL -->
+	<delete id="delResAction">
+		DELETE FROM reservation
+		WHERE  user_id = #{user_id}
+	</delete>
+	
+	<!-- 관리자 qna리스트불러오기 SQL -->
+	<select id="manQnaList" resultType="Qna">
+		SELECT *
+		FROM   qna
+	</select>
+	
+	<!-- 댓글 리스트불러오기 SQL -->
+	<select id="getReplyList" resultType="Reply">
+		SELECT *
+		FROM   REPLY
+		WHERE  qna_id = #{qna_id}
+	</select>
+	
+	
+	<!-- 답변 등록 SQL -->
+	<insert id="reply">
+		INSERT INTO reply (re_con,re_date,qna_id)
+		VALUES (#{re_con}, now(), #{qna_id})
+	</insert>
+	
 </mapper>

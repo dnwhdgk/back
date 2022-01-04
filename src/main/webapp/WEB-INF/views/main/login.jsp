@@ -8,9 +8,9 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	<link rel="stylesheet" href="${path}/resources/css/reset.css">
-	<link rel="stylesheet" href="${path}/resources/css/login.css">
-
+	<link rel="stylesheet" href="${path}/resources/css/main/reset.css">
+	<link rel="stylesheet" href="${path}/resources/css/main/login.css">
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
 
 </head>

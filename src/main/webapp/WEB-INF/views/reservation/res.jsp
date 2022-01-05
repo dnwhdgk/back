@@ -92,7 +92,7 @@
 					 IMP.request_pay({ // param
 				          pg: "html5_inicis",
 				          pay_method: "card",
-				          merchant_uid: "1612411-0000011",
+				          merchant_uid: "1611411-0000011",
 				          name: "야놀자 예약",
 				          amount: 1000000,
 				          buyer_email: "gildong@gmail.com",

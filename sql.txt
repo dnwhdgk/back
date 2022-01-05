@@ -3,58 +3,56 @@ CREATE TABLE USERS(
     user_pw     VARCHAR(20),
     user_name   VARCHAR(20),
     user_gender VARCHAR(4),
-    user_email  VARCHAR(200),
-    user_tel INT
+    user_email  VARCHAR(200)
 );
-commit;
 
 CREATE TABLE AUTHMAIL(
     user_mail VARCHAR(200) PRIMARY KEY,
     auth_num INT
 );
-DROP TABLE Review;
-CREATE TABLE Review(
-    rev_id    INT PRIMARY KEY AUTO_INCREMENT,
-    rev_title VARCHAR(20),
-    rev_contents    TEXT,
-    rev_date    DATE,
-    accom_id INT,
-    room_id  INT,
-    user_id INT
-);
+
 CREATE TABLE ROOM(
-room_id INT PRIMARY KEY,
+room_id INT PRIMARY KEY AUTO_INCREMENT,
 room_num INT,
 room_name VARCHAR(20),
 room_img TEXT,
-room_text TEXT
-);
-CREATE TABLE ACCOMDATION(
-accom_id INT PRIMARY KEY,
+room_price INT,
 accom_name VARCHAR(50),
+FOREIGN KEY (accom_name) REFERENCES accommodation (accom_name)
+);
+
+CREATE TABLE ACCOMMODATION(
+accom_name VARCHAR(50) PRIMARY KEY,
 accom_add TEXT,
 accom_img TEXT,
-accom_text VARCHAR(20)
+accom_text TEXT
 );
+
 CREATE TABLE RESERVATION(
-resev_id INT PRIMARY KEY,
-resev_status VARCHAR(30),
+resev_id INT PRIMARY KEY AUTO_INCREMENT,
 resev_st DATE,
 resev_end DATE,
 user_id VARCHAR(20),
-accom_id INT,
-room_id INT
+accom_name  VARCHAR(50),
+room_id INT,
+FOREIGN KEY (user_id) REFERENCES users (user_id),
+FOREIGN KEY (accom_name) REFERENCES accommodation (accom_name),
+FOREIGN KEY (room_id) REFERENCES room (room_id)
 );
+
 CREATE TABLE QNA(
 qna_id 	INT PRIMARY KEY AUTO_INCREMENT,
 qna_tit	VARCHAR(20),
 qna_con TEXT,
-qna_date DATE
+qna_date DATE,
+user_id VARCHAR(20),
+FOREIGN KEY (user_id) REFERENCES users (user_id)
 );
+
 CREATE TABLE REPLY(
 re_id	INT PRIMARY KEY AUTO_INCREMENT,
 re_con	TEXT,
 re_date	DATE,
-qna_id	INT
+qna_id	INT,
+FOREIGN KEY (qna_id) REFERENCES qna (qna_id)
 );
-commit;
